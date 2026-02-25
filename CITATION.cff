@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Mr.Pool: Adaptive Stochastic Control of Coordinated Adversarial Ecosystems"
+type: software
+authors:
+  - family-names: "Santos Gomes"
+    given-names: "Francisco"
+date-released: "2026-02-24"
+license: "Apache-2.0"
+repository-code: "https://github.com/mrpool-labs/mrpool-core"
+abstract: >
+  Open-core research platform implementing HJB-based adaptive defense, massive Monte Carlo benchmarking,
+  and coordination-graph drift estimation for adversarial ecosystem modeling.
+keywords:
+  - stochastic-control
+  - hjb
+  - adversarial-dynamics
+  - cybersecurity
+  - graph-learning
+  - rare-events

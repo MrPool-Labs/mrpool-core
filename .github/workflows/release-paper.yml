@@ -1,0 +1,39 @@
+name: release-paper
+on:
+  release:
+    types: [published]
+permissions:
+  contents: write
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Tectonic
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tectonic
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Generate figures/tables/text (best-effort)
+        run: |
+          python paper/scripts/make_figures_final.py || true
+          python paper/scripts/make_tables_final.py || true
+          python paper/scripts/make_results_text.py || true
+      - name: Build main.pdf
+        run: tectonic -X compile paper/main.tex --outdir paper/_build
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-pdf
+          path: paper/_build/main.pdf
+          if-no-files-found: error
+      - name: Upload to GitHub Release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: paper/_build/main.pdf
