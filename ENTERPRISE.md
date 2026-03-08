@@ -1,20 +1,32 @@
-# Mr.Pool Enterprise
+# MrPool Enterprise
 
-Mr.Pool Enterprise is the production-grade deployment of the Mr.Pool adaptive control engine.
+MrPool Enterprise is the commercial production platform built on top of
+MrPool Core.
 
-While **Mr.Pool Core** provides the open research framework (HJB solver, stochastic simulations,
-coordination modeling, synthetic graph learning), the Enterprise edition operationalizes adaptive
-adversarial ecosystem control in real environments.
+## What stays in the open-source core
 
-## 30-Day Pilot Program (Summary)
+The public repository contains the research engine:
 
-- **Week 1:** Integration + baseline ecosystem map
-- **Week 2–3:** Shadow adaptive mode (recommendations only)
-- **Week 4:** Controlled activation (gradual, reversible) + impact report
+- stochastic and bootstrap statistics
+- coordination and graph analysis primitives
+- control lookup logic
+- experiment scripts
+- reporting helpers
+- paper and citation artifacts
 
-**Default success metrics (kickoff-adjusted):**
-- X: ≥ 30% reduction in coordinated escape rate
-- Y: ≥ 30% reduction in coordinated cluster growth rate
-- Z: ≤ +10ms impact on P95 latency
+## What belongs to the enterprise platform
 
-See `sales/pilot_sow/` for SOW templates and `sales/metrics_governance/metrics_v1.0.md` for metric governance.
+The private enterprise repository contains production-grade capabilities such as:
+
+- real-time ingestion and event pipelines
+- operational APIs and service orchestration
+- observability, dashboards, and alerting
+- tenant isolation and customer-specific deployments
+- enterprise integrations and managed environments
+- contractual support and controlled release workflows
+
+## Distribution model
+
+MrPool Core can be published publicly.
+MrPool Enterprise should remain private and only be deployed for approved
+commercial engagements.
