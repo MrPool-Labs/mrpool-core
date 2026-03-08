@@ -1,44 +1,32 @@
-# Mr.Pool Core
+# MrPool Core
 
-Adaptive stochastic control for coordinated adversarial ecosystems.
+Open research framework for statistical modeling, coordination analysis,
+and control-oriented experimentation in adversarial ecosystems.
 
-**Open Core (Apache-2.0)**: research framework, reproducible experiments, paper-ready artifacts.  
-**Enterprise**: production ingestion/enforcement/RBAC/observability (see `ENTERPRISE.md`).
+## Scope
 
-## Quickstart
+MrPool Core contains the open research engine:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+- bootstrap statistics and uncertainty estimation
+- coordination metrics and graph-based analysis
+- control lookup logic and simulation utilities
+- reporting helpers for pilot-style experiments
+- reproducible experiments and paper artifacts
 
-pytest -q
-python experiments/benchmark_ray.py --quick
-python experiments/gnn_hjb_control.py --quick
-```
+Production platform capabilities are **not** part of this repository.
+See [ENTERPRISE.md](ENTERPRISE.md) for the separation between the open core
+and the commercial platform.
 
-## Landing page
+## Repository structure
 
-Bilingual landing page in `site/index.html`.  
-Enable GitHub Pages: Settings → Pages → Deploy from branch → `main` → `/site`.
+```text
+mrpool/
+  stats/
+  coordination/
+  control/
+  reporting/
 
-## Releases
-
-Publishing a GitHub Release triggers `.github/workflows/release-paper.yml`, which compiles `paper/main.tex`
-and uploads `paper/_build/main.pdf` as a release asset.
-
-## Enterprise Edition
-
-See [ENTERPRISE.md](ENTERPRISE.md) for the production deployment and 30-day pilot program.
-
-## Sales Ops
-
-- LinkedIn content: `sales/linkedin_posts/`
-- Outreach templates: `sales/outreach_templates/`
-- 30-day daily plan: `sales/daily_plan_30_days_*`
-- Pilot SOW (EN/PT): `sales/pilot_sow/`
-- Metrics governance: `sales/metrics_governance/metrics_v1.0.md`
-
-## License
-
-Apache-2.0 (see `LICENSE`).
+tests/
+experiments/
+paper/
+site/
